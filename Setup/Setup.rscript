@@ -1,0 +1,26 @@
+import os
+from colorama import Fore,init
+import requests
+import time
+init()
+
+DataBase = "https://raw.githubusercontent.com/DemixPro/DemixTM/main/Setup/"
+
+print(Fore.CYAN + "[!] Making files..." + Fore.RESET)
+open("Data.cfg", "w").write(r'''DataBase"https://GitHub.com/DemixPro/DemixTM"
+Version"0.01A"
+AutoUpdate"False"
+AvableLaungages"*ServerData*" what is *ServerData*? -- This value will get from server or DataBase value (You also can add you custom laungages tutorial:TUTORIAL PASTE HERE)
+FinalLaungage"None"
+Name"None"
+CustomFonts"True"''')
+os.mkdir("Fonts")
+os.mkdir("bin")
+print(Fore.CYAN + "[...] Waiting for folder was been created")
+while True:
+    if os.path.exists("Fonts") and os.path.exists("bin"):
+        break
+print(Fore.CYAN + "[!] Getting scripts from server and making files" + Fore.RESET)
+open("Fonts\\Logo.py", "w").write(requests.get(DataBase + "Logo.rscript").text)
+open("Fonts\\TextManager.py", "w").write(requests.get(DataBase + "TextManager.rscript").text)
+open("Main.py", "w").write(requests.get(DataBase + "Main.rscript").text)
