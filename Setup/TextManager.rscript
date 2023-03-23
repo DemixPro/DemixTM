@@ -1,0 +1,14 @@
+import sys
+import time
+
+def EditText(Text):
+    sys.stdout.flush()
+    
+    print("\r" + Text,end=' ')
+    time.sleep(0.1)
+    
+    return
+def PrintText(Text):
+    print(Text,end=' ')
+    
+    sys.stdout.flush()
