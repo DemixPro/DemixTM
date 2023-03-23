@@ -1,0 +1,12 @@
+from colorama import Fore,init
+from Fonts.Logo import Logo
+from Fonts.TextManager import EditText,PrintText
+import sys
+init()
+
+Logo()
+PrintText(Fore.CYAN + "[!] Please wait until loading will be completed" + Fore.RESET)
+from time import sleep as wait
+import os
+import time
+EditText(Fore.GREEN + "[+] Loading has been completed                     " + Fore.RESET)
